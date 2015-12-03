@@ -37,29 +37,28 @@
       $parallax.css( 'transform', 'translateY(' + calcOffset( $parent ) + '%)' );
     };
 
-    var geronimo = function() {
+    $els.each( function() {
+      var $this = $( this );
 
-      $els.each( function() {
-        var $this     = $( this );
-        var $parallax = $this;
-        var $parent   = $this.parent();
-
-        position( $parallax, $parent );
-
-        $parent.css( {
-          'overflow' : 'hidden',
-          'position' : 'relative',
-        } );
-
-        $parallax.css( {
-          'bottom'   : '-25%',
-          'left'     : '0',
-          'position' : 'absolute',
-          'right'    : '0',
-          'top'      : '-25%'
-        } );
+      $this.parent().css( {
+        'overflow' : 'hidden',
+        'position' : 'relative',
       } );
 
+      $this.css( {
+        'bottom'   : '-25%',
+        'left'     : '0',
+        'position' : 'absolute',
+        'right'    : '0',
+        'top'      : '-25%'
+      } );
+    } );
+
+    var geronimo = function() {
+      $els.each( function() {
+        var $this = $( this );
+        position( $this, $this.parent() );
+      } );
     };
 
     geronimo();
