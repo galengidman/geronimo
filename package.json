@@ -1,7 +1,7 @@
 {
-  "name": "Geronimo",
+  "name": "geronimo",
   "version": "1.0.0",
-  "description": "Super-simple parallax backgrounds",
+  "description": "Super-simple parallax backgrounds.",
   "repository": {
     "type": "git",
     "url": "https://github.com/galengidman/Geronimo.git"
