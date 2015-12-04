@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Geronimo! Super-simple parallax backgrounds</title>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,900">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,800">
 
   <style>
     * {
@@ -13,31 +13,37 @@
       box-sizing: border-box;
     }
 
+    html {
+      font-size: 50%;
+    }
+
     body {
-      font: 1.4rem/1.5 'Lato', sans-serif;
+      font: 2rem/1.5 'Catamaran', sans-serif;
       overflow-x: hidden;
-      color: #222;
+      color: #333;
     }
 
     h1 {
-      font-size: 4rem;
+      font-size: 6rem;
     }
 
     h2 {
       font-weight: normal;
-      font-size: 2rem;
-      color: #aaa;
+      font-size: 3rem;
+      color: #999;
     }
 
     pre {
       overflow: auto;
-      padding: 1em;
-      background: #eee;
+      padding: 2rem;
+      background: #f4f4f4;
+      border-radius: 3px;
     }
 
     code {
-      padding: .5em;
-      background: #eee;
+      padding: .5rem;
+      background: #f4f4f4;
+      border-radius: 3px;
     }
 
     ul {
@@ -73,7 +79,8 @@
 
     .container {
       position: relative;
-      max-width: 40rem;
+      width: 60rem;
+      max-width: 100%;
       margin: auto;
     }
 
@@ -82,15 +89,26 @@
     }
 
     .btn {
+      position: relative;
       display: inline-block;
       padding: 1em 2em;
-      background: white;
-      color: rebeccapurple;
-      font-size: 1.4rem;
+      color: white;
+      font-size: 2rem;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 3px;
       transition: .1s;
+    }
+
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: solid 3px;
+      border-radius: 3px;
+      opacity: .5;
     }
 
     .btn:hover {
@@ -103,38 +121,29 @@
       color: white;
     }
 
-    .boom {
-      font-size: 160px;
-    }
-
     .header p {
       margin-top: 1em;
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
     .header .btn {
-      margin: .5em;
+      margin: 1em;
     }
 
-    .credit {
-      margin-top: 10rem;
-      text-align: center;
-      color: #aaa;
-    }
-
-    .credit a {
-      color: inherit;
+    @media (min-width: 60rem) {
+      html {
+        font-size: 62.5%;
+      }
     }
   </style>
 </head>
 
 <body>
   <section class="header section">
-    <div class="background" style="background-image: url('assets/img/header.jpeg')"></div>
+    <div class="background"></div>
     <div class="overlay"></div>
 
     <div class="container">
-      <span class="boom">💥</span>
       <h1>Geronimo</h1>
       <p class="desc">Super-simple parallax backgrounds</p>
       <p><a href="https://github.com/galengidman/Geronimo/archive/master.zip" class="btn">Download</a> or <a href="https://github.com/galengidman/Geronimo" class="btn">View Project</a></p>
@@ -177,7 +186,8 @@
       <h2>License</h2>
       <p>Geronimo is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
 
-      <p class="credit">By <a href="https://twitter.com/galengidman">@galengidman</a></p>
+      <h2>Who made it?</h2>
+      <p><a href="https://twitter.com/galengidman">@galengidman</a> did.</p>
     </div>
   </section>
 
@@ -185,7 +195,20 @@
   <script src="assets/js/jquery.geronimo.min.js"></script>
   <script>
     $( function() {
-      $( '.background' ).geronimo();
+      var banners = [
+        'https://images.unsplash.com/photo-1436891678271-9c672565d8f6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=19a603025f5f82e92731fadf96172acf',
+        'https://images.unsplash.com/photo-1427501482951-3da9b725be23?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=923d114739a46e80f5ca973039ca3799',
+        'https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=88ab7f232cb335fdfb9ec61833eabcae',
+        'https://images.unsplash.com/photo-1418386767268-77cdab4edcaa?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d8435de88d1e9a31febed99edcf06645',
+        'https://images.unsplash.com/photo-1441260038675-7329ab4cc264?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18e06de73508a235d292e4c31a02940d',
+        'https://images.unsplash.com/photo-1440847899694-90043f91c7f9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=54f9ba66ae452bb286cb7fc8b1752a71'
+      ];
+
+      var randomBanner = function() {
+        return banners[ Math.floor( Math.random() * banners.length ) ];
+      }
+
+      $( '.background' ).attr( 'style', 'background-image: url(\'' + randomBanner() + '\')' ).geronimo();
     } );
   </script>
 </body>
