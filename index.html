@@ -1,1 +1,192 @@
-testing...
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Geronimo! Super-simple parallax backgrounds</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,900">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font: 1.4rem/1.5 'Lato', sans-serif;
+      overflow-x: hidden;
+      color: #222;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 2rem;
+      color: #aaa;
+    }
+
+    pre {
+      overflow: auto;
+      padding: 1em;
+      background: #eee;
+    }
+
+    code {
+      padding: .5em;
+      background: #eee;
+    }
+
+    ul {
+      margin-left: 2em;
+    }
+
+    a {
+      color: rebeccapurple;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 10%;
+    }
+
+    .background {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: -20%;
+      bottom: 0;
+      left: -20%;
+      background: radial-gradient(circle farthest-corner, rgba(0, 0, 0, .25), rgba(0, 0, 0, .5));
+      box-shadow: inset 0 0 60rem black;
+    }
+
+    .container {
+      position: relative;
+      max-width: 40rem;
+      margin: auto;
+    }
+
+    .spaced-children > * + * {
+      margin-top: 2em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1em 2em;
+      background: white;
+      color: rebeccapurple;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: .1s;
+    }
+
+    .btn:hover {
+      background: rebeccapurple;
+      color: white;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+    }
+
+    .boom {
+      font-size: 160px;
+    }
+
+    .header p {
+      margin-top: 1em;
+      font-size: 2rem;
+    }
+
+    .header .btn {
+      margin: .5em;
+    }
+
+    .credit {
+      margin-top: 10rem;
+      text-align: center;
+      color: #aaa;
+    }
+
+    .credit a {
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="header section">
+    <div class="background" style="background-image: url('assets/img/header.jpeg')"></div>
+    <div class="overlay"></div>
+
+    <div class="container">
+      <span class="boom">💥</span>
+      <h1>Geronimo</h1>
+      <p class="desc">Super-simple parallax backgrounds</p>
+      <p><a href="https://github.com/galengidman/Geronimo/archive/master.zip" class="btn">Download</a> or <a href="https://github.com/galengidman/Geronimo" class="btn">View Project</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container spaced-children">
+      <p>Geronimo is a jQuery/Zepto plugin that makes parallax backgrounds super-simple. No annoying configuration, frustrating math, or general misery. Just install, call, and you're good-to-go!</p>
+
+      <h2>Examples</h2>
+      <ul>
+        <li><a href="examples/full-screen.html">Full-Screen Parallax Background</a></li>
+        <li><a href="examples/tiles.html">Parallax Background Tiles</a></li>
+      </ul>
+
+      <h2>Manual installation</h2>
+      <p>First, include either jQuery or Zepto on the page, followed by Geronimo.</p>
+      <pre>&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/geronimo.min.js"&gt;&lt;/script&gt;</pre>
+      <p>Then call <code>.geronimo()</code> on the background elements you'd like to parallaxify.</p>
+<pre>&lt;section class="section"&gt;
+  &lt;div class="section-background" style="background-image: url('some/background/image.jpg')"&gt;&lt;/div&gt;
+  &lt;!-- the rest of your section content here --&gt;
+&lt;/section&gt;
+
+&lt;script&gt;
+  $( document ).ready( function() {
+    $( '.section-background' ).geronimo();
+  } );
+&lt;/script&gt;</pre>
+
+      <h2>Package managers</h2>
+      <p>Geronimo is available on NPM:</p>
+      <p><code>npm install geronimo --save</code></p>
+
+      <h2>Browser support</h2>
+      <p>IE10+, all recent versions of everything else.</p>
+
+      <h2>License</h2>
+      <p>Geronimo is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+      <p class="credit">By <a href="https://twitter.com/galengidman">@galengidman</a></p>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+  <script src="assets/js/jquery.geronimo.min.js"></script>
+  <script>
+    $( function() {
+      $( '.background' ).geronimo();
+    } );
+  </script>
+</body>
+</html>
