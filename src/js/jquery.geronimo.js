@@ -1,8 +1,19 @@
-( function( $ ) {
+/**
+ * Geronimo 1.0.0
+ * Super-simple parallax backgrounds.
+ *
+ * https://github.com/galengidman/Geronimo
+ *
+ * Licensed under the MIT License,
+ */
+
+;( function( $ ) {
+
+  'use strict';
 
   $.fn.geronimo = function() {
 
-    $els = this;
+    var $els = this;
 
     var calcOffset = function( $parent ) {
       var sizes        = getSizes( $parent );
@@ -37,6 +48,13 @@
       $parallax.css( 'transform', 'translateY(' + calcOffset( $parent ) + '%)' );
     };
 
+    var geronimo = function() {
+      $els.each( function() {
+        var $this = $( this );
+        position( $this, $this.parent() );
+      } );
+    };
+
     $els.each( function() {
       var $this = $( this );
 
@@ -54,13 +72,6 @@
       } );
     } );
 
-    var geronimo = function() {
-      $els.each( function() {
-        var $this = $( this );
-        position( $this, $this.parent() );
-      } );
-    };
-
     geronimo();
 
     $( window ).on( 'scroll resize', function() {
@@ -69,4 +80,4 @@
 
   };
 
-}( jQuery ) );
+} )( window.jQuery || window.Zepto );

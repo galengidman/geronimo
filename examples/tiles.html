@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geronimo Full-Screen Parallax Background</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { display: flex; flex-wrap: wrap; font-family: sans-serif; text-align: center; }
+    .tile { position: relative; display: flex; align-items: center; justify-content: center; width: 50vw; height: 50vh; padding: 5%; overflow: hidden; }
+    .tile-inner { position: relative; }
+    .background { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-position: center; background-size: cover; }
+    .white { color: white; }
+  </style>
+</head>
+
+<body>
+  <section class="tile white">
+    <div class="background parallax" style="background-image: url('https://unsplash.it/1440/900/?random')"></div>
+
+    <div class="tile-inner">
+      <h1>A parallax tile</h1>
+    </div>
+  </section>
+
+  <section class="tile white">
+    <div class="background" style="background-image: url('https://unsplash.it/1600/900/')"></div>
+
+    <div class="tile-inner">
+      <h1>A non-parallax tile</h1>
+    </div>
+  </section>
+
+  <section class="tile white">
+    <div class="background" style="background-image: url('https://unsplash.it/1600/900/?random')"></div>
+
+    <div class="tile-inner">
+      <h1>A non-parallax tile</h1>
+    </div>
+  </section>
+
+  <section class="tile white">
+    <div class="background parallax" style="background-image: url('https://unsplash.it/1440/900/')"></div>
+
+    <div class="tile-inner">
+      <h1>A parallax tile</h1>
+    </div>
+  </section>
+
+  <section class="tile">
+    <div class="tile-inner">
+      <h1>Pretty cool, huh?</h1>
+    </div>
+  </section>
+
+  <section class="tile">
+    <div class="background parallax" style="background-image: url('https://unsplash.it/1920/1080/')"></div>
+
+    <div class="tile-inner">
+      <h1>Here's another tile</h1>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+  <script src="../dist/js/jquery.geronimo.min.js"></script>
+
+  <script>
+    $( document ).ready( function() {
+      $( '.background.parallax' ).geronimo();
+    } );
+  </script>
+</body>
+</html>

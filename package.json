@@ -1,0 +1,23 @@
+{
+  "name": "Geronimo",
+  "version": "1.0.0",
+  "description": "Super-simple parallax backgrounds",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galengidman/Geronimo.git"
+  },
+  "keywords": [
+    "parallax"
+  ],
+  "author": "Galen Gidman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/galengidman/Geronimo/issues"
+  },
+  "homepage": "https://github.com/galengidman/Geronimo",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1"
+  }
+}
