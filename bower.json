@@ -1,0 +1,19 @@
+{
+  "name": "geronimo",
+  "description": "Super-simple parallax backgrounds.",
+  "main": "dist/js/jquery.geronimo.min.js",
+  "author": "Galen Gidman <galen@galengidman.com> (http://galengidman.com/)",
+  "license": "MIT",
+  "keywords": [
+    "parallax"
+  ],
+  "homepage": "https://github.com/galengidman/Geronimo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
