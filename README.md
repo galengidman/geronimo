@@ -28,9 +28,10 @@ Then call `.geronimo()` on the background elements you'd like to parallaxify.
 
 ## Package managers
 
-Geronimo is available on NPM:
+Geronimo is available on NPM and Bower.
 
 `npm install geronimo --save`
+`bower install geronimo --save`
 
 ## Browser support
 
