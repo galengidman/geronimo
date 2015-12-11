@@ -33,7 +33,7 @@
         parentHeight : $parent[0].offsetHeight,
         parentOffset : $parent.offset().top,
         parentTop    : $parent[0].getBoundingClientRect().top,
-        scrollPos    : window.scrollY,
+        scrollPos    : window.pageYOffset,
         windowHeight : window.innerHeight
       }
     };
