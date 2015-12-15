@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Geronimo Parallax Background Tiles</title>
+  <title>Geronimo Full-Screen Parallax Background</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,700">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { display: flex; flex-wrap: wrap; font-family: sans-serif; text-align: center; }
-    .tile { position: relative; display: flex; align-items: center; justify-content: center; width: 50vw; height: 50vh; padding: 5%; overflow: hidden; }
+    body { display: flex; flex-wrap: wrap; font-size: 150%; font-family: Catamaran, sans-serif; text-align: center; }
+    .tile { position: relative; display: flex; align-items: center; justify-content: center; height: 50vh; width: 100%; padding: 5%; overflow: hidden; }
     .tile-inner { position: relative; }
     .background { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-position: center; background-size: cover; }
     .white { color: white; }
+    @media (min-width: 30em) {
+      .tile { width: 50vw; }
+    }
   </style>
 </head>
 
 <body>
   <section class="tile white">
-    <div class="background parallax" style="background-image: url('https://unsplash.it/1440/900/?random')"></div>
+    <div class="background parallax" style="background-image: url('https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?crop=entropy&fit=crop&fm=jpg&h=800&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200')"></div>
 
     <div class="tile-inner">
       <h1>A parallax tile</h1>
@@ -23,7 +28,7 @@
   </section>
 
   <section class="tile white">
-    <div class="background" style="background-image: url('https://unsplash.it/1600/900/')"></div>
+    <div class="background" style="background-image: url('https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?crop=entropy&fit=crop&fm=jpg&h=800&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200')"></div>
 
     <div class="tile-inner">
       <h1>A non-parallax tile</h1>
@@ -31,7 +36,7 @@
   </section>
 
   <section class="tile white">
-    <div class="background" style="background-image: url('https://unsplash.it/1600/900/?random')"></div>
+    <div class="background" style="background-image: url('https://images.unsplash.com/photo-1428999418909-363f8e091c50?crop=entropy&fit=crop&fm=jpg&h=800&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1200')"></div>
 
     <div class="tile-inner">
       <h1>A non-parallax tile</h1>
@@ -39,7 +44,7 @@
   </section>
 
   <section class="tile white">
-    <div class="background parallax" style="background-image: url('https://unsplash.it/1440/900/')"></div>
+    <div class="background parallax" style="background-image: url('https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1200&fit=max&s=b1ddf33accff1d2a132f31c55435f2ae&h=800')"></div>
 
     <div class="tile-inner">
       <h1>A parallax tile</h1>
@@ -53,15 +58,16 @@
   </section>
 
   <section class="tile">
-    <div class="background parallax" style="background-image: url('https://unsplash.it/1920/1080/')"></div>
+    <div class="background parallax" style="background-image: url('https://images.unsplash.com/photo-1428604422807-314cf752cbc9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1200&fit=max&s=d8be2e99beaa422af7466b369d85712c&h=800')"></div>
 
     <div class="tile-inner">
       <h1>Here's another tile</h1>
     </div>
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
-  <script src="../assets/js/jquery.geronimo.min.js"></script>
+  <script src="../dist/js/jquery.geronimo.min.js"></script>
 
   <script>
     $( document ).ready( function() {

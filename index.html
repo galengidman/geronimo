@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Geronimo! Super-simple parallax backgrounds</title>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,800">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,700">
 
   <style>
     * {
@@ -18,7 +18,7 @@
     }
 
     body {
-      font: 2rem/1.5 'Catamaran', sans-serif;
+      font: 2rem/1.5 Catamaran, sans-serif;
       overflow-x: hidden;
       color: #333;
     }
@@ -92,6 +92,7 @@
       position: relative;
       display: inline-block;
       padding: 1em 2em;
+      border-radius: 3px;
       color: white;
       font-size: 2rem;
       font-weight: bold;
@@ -177,8 +178,9 @@
 &lt;/script&gt;</pre>
 
       <h2>Package managers</h2>
-      <p>Geronimo is available on NPM:</p>
-      <p><code>npm install geronimo --save</code></p>
+      <p>Geronimo is available on NPM and Bower:</p>
+      <pre>npm install geronimo --save</pre>
+      <pre>bower install geronimo --save</pre>
 
       <h2>Browser support</h2>
       <p>IE10+, all recent versions of everything else.</p>
@@ -196,8 +198,6 @@
   <script>
     $( function() {
       var banners = [
-        'https://images.unsplash.com/photo-1436891678271-9c672565d8f6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=19a603025f5f82e92731fadf96172acf',
-        'https://images.unsplash.com/photo-1427501482951-3da9b725be23?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=923d114739a46e80f5ca973039ca3799',
         'https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=88ab7f232cb335fdfb9ec61833eabcae',
         'https://images.unsplash.com/photo-1418386767268-77cdab4edcaa?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d8435de88d1e9a31febed99edcf06645',
         'https://images.unsplash.com/photo-1441260038675-7329ab4cc264?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=18e06de73508a235d292e4c31a02940d',
