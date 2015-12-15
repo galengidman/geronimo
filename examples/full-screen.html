@@ -3,9 +3,11 @@
 <head>
   <title>Geronimo Full-Screen Parallax Background</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,700">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; text-align: center; }
+    body { font-size: 150%; font-family: Catamaran, sans-serif; text-align: center; }
     p { margin-top: .5em; }
     .section { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 5%; }
     .section-inner { position: relative; }
@@ -23,7 +25,7 @@
   </section>
 
   <section class="section white">
-    <div class="background" style="background-image: url('https://unsplash.it/1600/900/?random')"></div>
+    <div class="background" style="background-image: url('https://images.unsplash.com/photo-1429616588302-fec569e203ce?crop=entropy&fit=crop&fm=jpg&h=1080&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1920')"></div>
 
     <div class="section-inner">
       <h1>Pretty cool, huh?</h1>
@@ -31,13 +33,22 @@
   </section>
 
   <section class="section white">
-    <div class="background" style="background-image: url('https://unsplash.it/1600/900/')"></div>
+    <div class="background" style="background-image: url('https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&fit=crop&fm=jpg&h=1080&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1920')"></div>
 
     <div class="section-inner">
       <h1>Here's another section</h1>
     </div>
   </section>
 
+  <section class="section white">
+    <div class="background" style="background-image: url('https://images.unsplash.com/reserve/OnRKhvlFQ2uJNSx5O3cc_DSC00560.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1920&fit=max&s=34a5a58e0bd8faf1735cd7a4f0c08b87&h=1080')"></div>
+
+    <div class="section-inner">
+      <h1>And a third section</h1>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="../dist/js/jquery.geronimo.min.js"></script>
 
