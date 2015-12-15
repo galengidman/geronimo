@@ -5,139 +5,9 @@
   <title>Geronimo! Super-simple parallax backgrounds</title>
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
+  <link rel="stylesheet" href="assets/css/site.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:300,700">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 50%;
-    }
-
-    body {
-      font: 2rem/1.5 Catamaran, sans-serif;
-      overflow-x: hidden;
-      color: #333;
-    }
-
-    h1 {
-      font-size: 6rem;
-    }
-
-    h2 {
-      font-weight: normal;
-      font-size: 3rem;
-      color: #999;
-    }
-
-    pre {
-      overflow: auto;
-      padding: 2rem;
-      background: #f4f4f4;
-      border-radius: 3px;
-    }
-
-    code {
-      padding: .5rem;
-      background: #f4f4f4;
-      border-radius: 3px;
-    }
-
-    ul {
-      margin-left: 2em;
-    }
-
-    a {
-      color: rebeccapurple;
-    }
-
-    .section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 10%;
-    }
-
-    .background {
-      background-position: center;
-      background-size: cover;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      right: -20%;
-      bottom: 0;
-      left: -20%;
-      background: radial-gradient(circle farthest-corner, rgba(0, 0, 0, .25), rgba(0, 0, 0, .5));
-      box-shadow: inset 0 0 60rem black;
-    }
-
-    .container {
-      position: relative;
-      width: 60rem;
-      max-width: 100%;
-      margin: auto;
-    }
-
-    .spaced-children > * + * {
-      margin-top: 2em;
-    }
-
-    .btn {
-      position: relative;
-      display: inline-block;
-      padding: 1em 2em;
-      border-radius: 3px;
-      color: white;
-      font-size: 2rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: .1s;
-    }
-
-    .btn:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      border: solid 3px;
-      border-radius: 3px;
-      opacity: .5;
-    }
-
-    .btn:hover {
-      background: rebeccapurple;
-      color: white;
-    }
-
-    .header {
-      text-align: center;
-      color: white;
-    }
-
-    .header p {
-      margin-top: 1em;
-      font-size: 3rem;
-    }
-
-    .header .btn {
-      margin: 1em;
-    }
-
-    @media (min-width: 60rem) {
-      html {
-        font-size: 62.5%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/prism.css">
 </head>
 
 <body>
@@ -166,10 +36,10 @@
 
       <h2>Manual installation</h2>
       <p>First, include either jQuery or Zepto on the page, followed by Geronimo.</p>
-      <pre>&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="path/to/geronimo.min.js"&gt;&lt;/script&gt;</pre>
+      <pre><code class="language-markup">&lt;script src="path/to/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/geronimo.min.js"&gt;&lt;/script&gt;</code></pre>
       <p>Then call <code>.geronimo()</code> on the background elements you'd like to parallaxify.</p>
-<pre>&lt;section class="section"&gt;
+<pre><code class="language-markup">&lt;section class="section"&gt;
   &lt;div class="section-background" style="background-image: url('some/background/image.jpg')"&gt;&lt;/div&gt;
   &lt;!-- the rest of your section content here --&gt;
 &lt;/section&gt;
@@ -178,12 +48,12 @@
   $( document ).ready( function() {
     $( '.section-background' ).geronimo();
   } );
-&lt;/script&gt;</pre>
+&lt;/script&gt;</code></pre>
 
       <h2>Package managers</h2>
       <p>Geronimo is available on NPM and Bower:</p>
-      <pre>npm install geronimo --save</pre>
-      <pre>bower install geronimo --save</pre>
+      <pre class="language-bash"><code>npm install geronimo --save</code></pre>
+      <pre class="language-bash"><code>bower install geronimo --save</code></pre>
 
       <h2>Browser support</h2>
       <p>IE10+, all recent versions of everything else.</p>
@@ -199,6 +69,7 @@
 
   <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5459192310816305" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+  <script src="assets/js/prism.js"></script>
   <script src="assets/js/jquery.geronimo.min.js"></script>
   <script>
     $( function() {
