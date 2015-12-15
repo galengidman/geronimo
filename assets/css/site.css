@@ -26,10 +26,12 @@ h2 {
 
 pre[class*="language-"] {
   border-radius: 3px;
+  line-height: 1.25;
 }
 
 code {
-  font-size: 1.4rem;
+  font-size: 14px;
+  line-height: 1.25;
 }
 
 code:not([data-class*='langauge-']) {
@@ -78,6 +80,10 @@ a {
 
 .spaced-children > * + * {
   margin-top: 2em;
+}
+
+.spaced-children pre[class*="language-"] {
+  margin: 2em 0 0;
 }
 
 .btn {
