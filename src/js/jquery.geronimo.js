@@ -64,11 +64,12 @@
       } );
 
       $this.css( {
-        'bottom'   : '-25%',
-        'left'     : '0',
-        'position' : 'absolute',
-        'right'    : '0',
-        'top'      : '-25%'
+        'bottom'     : '-25%',
+        'left'       : '0',
+        'position'   : 'absolute',
+        'right'      : '0',
+        'top'        : '-25%',
+        'transition' : '75ms'
       } );
     } );
 
