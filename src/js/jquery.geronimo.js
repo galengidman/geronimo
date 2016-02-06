@@ -65,6 +65,7 @@
 
       $this.css( {
         'bottom'     : '-25%',
+        'height'     : 'auto',
         'left'       : '0',
         'position'   : 'absolute',
         'right'      : '0',
