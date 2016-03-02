@@ -1,5 +1,5 @@
 /**
- * Geronimo 1.0.0
+ * Geronimo 1.1.0
  * Super-simple parallax backgrounds.
  *
  * https://github.com/galengidman/Geronimo
@@ -11,21 +11,30 @@
 
   'use strict';
 
-  $.fn.geronimo = function() {
+  $.fn.geronimo = function( options ) {
+
+    var options = $.extend( {
+      speed: 'medium'
+    }, options );
 
     var $els = this;
 
-    var calcOffset = function( $parent ) {
-      var sizes        = getSizes( $parent );
-      var compensation = 16.667;
+    var compensations = { slow: 10, medium: 16.667, fast: 25 };
+    var compensation = compensations[options.speed];
+
+    var offsets = { slow: '12.5%', medium: '25%', fast: '50%' };
+    var offset = offsets[options.speed];
+
+    var calcPosition = function( $parent ) {
+      var sizes = getSizes( $parent );
 
       var totalInViewport   = sizes.windowHeight + sizes.parentHeight;
       var inViewport        = ( sizes.scrollPos + sizes.windowHeight ) - sizes.parentOffset;
       var percentInViewport = ( inViewport / totalInViewport ) * 100;
 
-      var offset = ( ( percentInViewport / 100 ) * ( compensation * 2 ) ) - compensation;
+      var pos = ( ( percentInViewport / 100 ) * ( compensation * 2 ) ) - compensation;
 
-      return offset;
+      return pos;
     };
 
     var getSizes = function( $parent ) {
@@ -45,7 +54,7 @@
 
     var position = function( $parallax, $parent ) {
       if ( ! inViewport( $parent ) ) return;
-      $parallax.css( 'transform', 'translateY(' + calcOffset( $parent ) + '%)' );
+      $parallax.css( 'transform', 'translateY(' + calcPosition( $parent ) + '%)' );
     };
 
     var geronimo = function() {
@@ -64,13 +73,13 @@
       } );
 
       $this.css( {
-        'bottom'     : '-25%',
+        'bottom'     : '-' + offset,
         'height'     : 'auto',
         'left'       : '0',
         'position'   : 'absolute',
         'right'      : '0',
-        'top'        : '-25%',
-        'transition' : '75ms'
+        'top'        : '-' + offset,
+        'transition' : '100ms'
       } );
     } );
 

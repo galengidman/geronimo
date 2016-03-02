@@ -26,6 +26,16 @@ Then call `.geronimo()` on the background elements you'd like to parallaxify.
 </script>
 ```
 
+You can specify the speed of the effect as `slow`, `medium` (default), or `fast` like so:
+
+```html
+<script>
+  $( document ).ready( function() {
+    $( '.section-background' ).geronimo( { speed: 'slow' } );
+  } );
+</script>
+```
+
 ## Package managers
 
 Geronimo is available on NPM and Bower.
