@@ -1,3 +1,9 @@
+# DEPRECATED
+
+Geronimo served its purpose well, but these days I'd recommend [Rellax](https://github.com/dixonandmoe/rellax).
+
+---
+
 # Geronimo 💥
 
 Geronimo is a jQuery/Zepto plugin that makes parallax backgrounds super-simple. No annoying configuration, frustrating math, or general misery. Just install, call, and you're good-to-go!
